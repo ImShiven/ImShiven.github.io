@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LogsReader</title>
+    <link rel="icon" type="image/png" href="../Images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../Scripts/JQuery/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/JQUI/jquery-ui.min.js"></script>
+    <script src="../Scripts/BootStrap/js/bootstrap.min.js"></script>
+    <link href="../Styles/GlobalCSS.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Scripts/JQUI/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela:400%7CMuli:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic%7CLora:regular,italic,700,700italic" />
+    <style>
+        body {
+            background: linear-gradient(rgb(255, 255, 255) 0%, rgb(237, 237, 237) 10%,rgb(247, 247, 247) 20%, rgb(255, 255, 255) 50%,rgb(247, 247, 247) 60%,rgb(255, 255, 255) 100%);
+        }
+        .abalone-para {
+            letter-spacing: 1px;
+            text-align: justify;
+            width: 84%;
+            color: black;
+        }
+        .scrnshot-img {
+            width: 85%;
+            height: 550px;
+            margin-left: 1.5%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .scrnshot-img-container {
+            width: 100%;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        .app-heading {
+            text-align: left;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .app-heading-section {
+            text-align: left;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: darkorange;
+        }
+
+        .div-desc {
+            padding-left: 15%;
+            padding-bottom: 1%;
+            padding-right: 15%;
+            padding-top: 1%;
+            background: transparent;
+            margin-top: 0%;
+        }
+
+        .navigation-bar.dark {
+            background: none;
+        }
+
+        @media (max-width: 991px) {
+            .scrnshot-img {
+                height: 500px;
+                width: 100%;
+            }
+
+            .div-desc {
+                padding-left: 1%;
+                padding-right: 5%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .scrnshot-img {
+                height: 350px;
+                margin-left: 0%;
+                width: 100%;
+            }
+
+            .div-desc {
+                padding-left: 1%;
+                padding-right: 5%;
+            }
+            .abalone-para {
+                color: black;
+                letter-spacing: 0px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 479px) {
+            body {
+                background: none;
+            }
+            .abalone-para {
+                color: rgba(0,0,0,0.6);
+                letter-spacing: 0px;
+                width: 100%;
+            }
+            .scrnshot-img {
+                height: 200px;
+                margin-left: 0%;
+                width: 100%;
+                box-shadow: 1px 2px 8px 0px rgba(0,0,0,0.6);
+            }
+            .scrnshot-img-container {
+                width: 95%;
+                margin-left: 5%;
+            }
+
+            .app-heading {
+                font-size: 15px;
+                letter-spacing: 2px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+
+            .app-heading-section {
+                font-size: 14px;
+            }
+
+            .div-desc {
+                margin-top: 5%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div data-collapse="none" data-animation="over-right" data-duration="400" data-doc-height="1" id="nav-bar-top" class="navigation-bar dark w-nav" style="background-color:transparent;">
+        <div class="navigation-bar-container w-container">
+            <a class="brand-link left-spacing w-nav-brand w--current" href="../Pages/Home.aspx">
+                <img src="../Images/lgo.jpg" class="brand-image" alt="Brand-Pic Coming soon" />
+            </a>
+        </div>
+        <div style="float: right;">
+            <nav class="navigation-menu w-nav-menu" role="navigation">
+                <a href="../Pages/Home.aspx" class="navigation-link w-nav-link" style="max-height: 728px; text-decoration: none; padding: 10px;">Home</a>
+                <a href="../Pages/HireMe.aspx" class="navigation-link w-nav-link" style="max-height: 728px; text-decoration: none; padding: 10px;">Hire Me</a>
+            </nav>
+        </div>
+        <div class="w-nav-overlay"></div>
+    </div>
+
+    <div id="div-description" class="container-fluid div-desc slide-page">
+        <h1 class="app-heading">Error Log Reader</h1>
+        <h2 class="app-heading-section">background</h2>
+        <div class="about-hero-description abalone-para">
+            It is a tedious job to browse and find most recent exception occured (among already logged hundreds of other exceptions)
+            in error-log text file of your application.Error Log Reader parses all the exceptions from the chosen log file and represent
+            them in a well decorated form in the order of most recent error to older ones. Thus that, errors are well readable and
+            makes application tracking/monitoring easy as well.
+            <br /><br />
+            One need to choose an error log file of application by hitting <b><i>Read File</i></b> button(shown below).As soon as file is selected,
+            it will get parsed and errors are represented in an ordered form. Each block contains details of an error.
+            <br /><br />
+            By default,only basic error details are shown with expand button (<b>[+]</b>) on top-right corner for each error block.
+            One can click on expand button (<b>[+]</b>) in order to veiw full error details.
+            <br /><br />
+            Following entities will be shown for each error block:
+        </div>
+        <ul class="about-hero-description abalone-para">
+            <li>Which <b>URL</b> error is occured on?</li>
+            <li>Which <b>Browser</b> error is occured on?</li>
+            <li>Which <b>Date & time</b> error is occured on?</li>
+            <li>Which <b>User</b> has encountered the error?</li>
+            <li>What are the <b>details of Exception</b>?</li>
+        </ul>
+        <br />
+
+        <h2 style="text-align:left;letter-spacing:3px;text-transform:uppercase;font-size:14px;color:darkorange;">Images</h2>
+        <div class="row">
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/logHome11.png" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/logHome.png" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="footer">
+        <div class="footer-social-links up-to-down-animation">
+            <a href="https://www.linkedin.com/in/chauhanshivendra/" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/lin.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://www.twitter.com/I_m_Shiven" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/twi.svg" alt="twitter" />
+            </a>
+            <a href="https://www.instagram.com/shiven_chauhan/" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/instagram-logo.svg" alt="Instagram" />
+            </a>
+            <a href="https://www.medium.com/@ShivendraChauhan" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/medium.svg" alt="Medium" />
+            </a>
+            <a href="https://www.github.com/ImShiven" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/git.svg" alt="GitHub" />
+            </a>
+        </div>
+        <div class="footer-copyright up-to-down-animation">Copyright © 2018 Shivendra Chauhan</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AppTour</title>
+    <link rel="icon" type="image/png" href="../Images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../Scripts/JQuery/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/JQUI/jquery-ui.min.js"></script>
+    <script src="../Scripts/BootStrap/js/bootstrap.min.js"></script>
+    <link href="../Styles/GlobalCSS.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Scripts/JQUI/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../Scripts/BootStrap/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela:400%7CMuli:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic%7CLora:regular,italic,700,700italic" />
+    <style type="text/css">
+        body {
+            background: linear-gradient(rgb(255, 255, 255) 0%, rgb(237, 237, 237) 10%,rgb(247, 247, 247) 20%, rgb(255, 255, 255) 50%,rgb(247, 247, 247) 60%,rgb(255, 255, 255) 100%);
+        }
+        .abalone-para {
+            letter-spacing: 1px;
+            text-align: justify;
+            width: 84%;
+            color: black;
+        }
+
+        table td {
+            vertical-align: top;
+        }
+
+        td h1, td .h1, td h2, td .h2, td h3, td .h3 {
+            margin-top: 0px;
+        }
+
+        button:hover {
+            color: #C00B58;
+            border: 1px solid #C00B58 !important;
+            font-weight: 500;
+        }
+
+        .ui-tabs .ui-tabs-panel {
+            display: block;
+            padding: 0px !important;
+            border-width: 0;
+            background: none;
+        }
+
+        #sliderContainer {
+            width: 1090px;
+            margin: 0;
+            padding: 0px;
+            position: relative;
+            overflow: hidden;
+            height: 620px !important;
+        }
+
+            #sliderContainer .slider {
+                width: 590px;
+                margin: 0;
+                padding: 0px;
+                position: relative;
+                overflow: hidden;
+                height: 520px !important;
+                float: left;
+            }
+
+        .clsdivrole {
+            background: rgba(255,255,255, 0.8);
+            width: 98%;
+            margin-left: 4px;
+            border-radius: 0px;
+            height: 563px;
+        }
+
+        .gradmc {
+            background: rgba(147,206,222,1);
+            background: -moz-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(147,206,222,1) 0%, rgba(73,165,191,1) 1%, rgba(79,168,194,1) 8%, rgba(117,189,209,0.69) 50%, rgba(117,189,209,0.39) 91%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(0%, rgba(147,206,222,1)), color-stop(1%, rgba(73,165,191,1)), color-stop(8%, rgba(79,168,194,1)), color-stop(50%, rgba(117,189,209,0.69)), color-stop(91%, rgba(117,189,209,0.39)));
+            background: -webkit-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(147,206,222,1) 0%, rgba(73,165,191,1) 1%, rgba(79,168,194,1) 8%, rgba(117,189,209,0.69) 50%, rgba(117,189,209,0.39) 91%);
+            background: -o-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(147,206,222,1) 0%, rgba(73,165,191,1) 1%, rgba(79,168,194,1) 8%, rgba(117,189,209,0.69) 50%, rgba(117,189,209,0.39) 91%);
+            background: -ms-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(147,206,222,1) 0%, rgba(73,165,191,1) 1%, rgba(79,168,194,1) 8%, rgba(117,189,209,0.69) 50%, rgba(117,189,209,0.39) 91%);
+            background: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(147,206,222,1) 0%, rgba(73,165,191,1) 1%, rgba(79,168,194,1) 8%, rgba(117,189,209,0.69) 50%, rgba(117,189,209,0.39) 91%);
+            width: 100%;
+            height: 30px;
+            margin-top: 3px;
+            border-radius: 5px;
+        }
+
+        #logo1 {
+            background: url(../images/logo.png) no-repeat;
+            float: left;
+            height: 69px;
+            margin: 0 0 0 10px;
+            position: relative;
+            width: 129px;
+        }
+
+        .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+            color: black;
+            text-decoration: none;
+            background: transparent;
+            border-radius: 3px;
+            font-family: Verdana, Geneva, sans-serif;
+            border: 0 !important;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .ui-widget-header {
+            background: transparent;
+            border: none;
+            float: right;
+        }
+
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+            cursor: text;
+            background: #EBEBEE;
+            color: #5F5F88;
+            font-size: 11px;
+            border-radius: 3px;
+            font-family: Verdana, Geneva, sans-serif;
+            border: 0 !important;
+        }
+
+        .btnEnable {
+            background: none;
+            border: 1px solid orange !important;
+            border-image: none !important;
+            width: 90%;
+            color: orange;
+            font-weight: bold;
+            padding: 8px !important;
+            margin-top: 10px;
+        }
+
+        .btnDisable {
+            background: none;
+            border: 1px solid white !important;
+            border-image: none !important;
+            width: 90%;
+            color: white;
+            padding: 8px !important;
+            margin-top: 10px;
+        }
+
+        .btnDisable1 {
+            background: none;
+            border: 1px solid black !important;
+            border-image: none !important;
+            width: 90%;
+            color: black;
+            padding: 8px !important;
+            margin-top: 15px;
+            margin-left: 5%;
+            border-radius: 8px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btnEnable1 {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid orange !important;
+            border-image: none !important;
+            width: 90%;
+            color: orange;
+            padding: 8px !important;
+            margin-top: 15px;
+            margin-left: 5%;
+            border-radius: 8px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .divInternal {
+            background: darkslategray;
+            border-radius: 0px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #olNavigationDots li {
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            z-index: 12;
+            left: 450px;
+            top: 590px;
+            background: rgba(0,0,0,0.6);
+        }
+
+            #olNavigationDots li:hover {
+                background: white;
+                cursor: pointer;
+            }
+
+        .activeNavItem {
+            background: white !important;
+        }
+
+        .img-size {
+            width: 100%;
+            height: 510px;
+        }
+
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+            background: transparent;
+            border-bottom: 2px solid grey !important;
+            border-radius: 0px !important;
+            color: darkorange;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+
+        .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+            padding: 10px;
+        }
+
+        .scrnshot-img {
+            width: 96%;
+            height: 550px;
+            margin-left: 1.5%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .scrnshot-img-container {
+            width: 100%;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        .app-heading {
+            text-align: left;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .app-heading-section {
+            text-align: left;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: darkorange;
+        }
+
+        .div-desc {
+            padding-left: 15%;
+            padding-bottom: 1%;
+            padding-right: 15%;
+            padding-top: 1%;
+            background: transparent;
+            margin-top: 0%;
+        }
+
+        #divbg {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        @media (max-width: 991px) {
+            .scrnshot-img {
+                height: 500px;
+                width: 100%;
+            }
+
+            #divbg {
+                display: none;
+            }
+
+            .div-desc {
+                padding-left: 1%;
+                padding-right: 5%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .scrnshot-img {
+                height: 350px;
+                margin-left: 0%;
+                width: 100%;
+            }
+
+            #divbg {
+                display: none;
+            }
+
+            .div-desc {
+                padding-left: 1%;
+                padding-right: 5%;
+            }
+            .abalone-para {
+                color: black;
+                letter-spacing: 0px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 479px) {
+            body {
+                background: none;
+            }
+            .abalone-para {
+                color: rgba(0,0,0,0.6);
+                letter-spacing: 0px;
+                width: 100%;
+            }
+            .scrnshot-img {
+                height: 200px;
+                margin-left: 0%;
+                width: 100%;
+                box-shadow: 1px 2px 8px 0px rgba(0,0,0,0.6);
+            }
+            .scrnshot-img-container {
+                width:95%;
+                margin-left:5%;
+            }
+             #divbg {
+                display: none;
+            }
+
+            .app-heading {
+                font-size: 15px;
+                letter-spacing: 2px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+
+            .app-heading-section {
+                font-size: 14px;
+            }
+
+            .div-desc {
+                margin-top: 5%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+
+        .navigation-bar.dark {
+            background: none;
+        }
+    </style>
+    <script type="text/javascript">
+        var newClicked = 0;
+        $(document).ready(function () {
+            $('#tabs').tabs();
+            $(".divInternal input[type=submit]").button();
+            $("button[type=submit]").button();
+
+            $(".divInternal input[type=submit]").click(function () {
+                var btn = $(this);
+                if ($(".divInternal input[type=submit]").hasClass('btnEnable')) { $(".divInternal input[type=submit]").removeClass("btnEnable"); }
+                if ($(".divInternal input[type=submit]").hasClass('btnDisable')) { $(".divInternal input[type=submit]").removeClass("btnDisable"); }
+                var MCOid = $(".divInternal input[value=DESIGNER]");
+                var RHid = $(".divInternal input[value=TRAINER]");
+                var UHid = $(".divInternal input[value=DEVELOPER]");
+                if (btn.attr('id') == MCOid.attr('id')) {
+                    MCOid.addClass("btnEnable");
+                    RHid.addClass("btnDisable");
+                    UHid.addClass("btnDisable");
+                }
+                else if (btn.attr('id') == RHid.attr('id')) {
+                    MCOid.addClass("btnDisable");
+                    RHid.addClass("btnEnable");
+                    UHid.addClass("btnDisable");
+                }
+                else if (btn.attr('id') == UHid.attr('id')) {
+                    MCOid.addClass("btnDisable");
+                    RHid.addClass("btnDisable");
+                    UHid.addClass("btnEnable");
+                }
+            });
+            $("button[type=submit]").click(function () {
+                var btn = $(this);
+                if ($("button[type=submit]").hasClass('btnEnable1')) {
+                    $("button[type=submit]").removeClass('btnEnable1');
+                }
+                $("button[type=submit]").addClass('btnDisable1');
+                btn.removeClass('btnDisable1');
+                btn.addClass('btnEnable1');
+                //$('#tour_overlay').show();
+                newClicked = 1;
+                $('#aHome').trigger('click');
+                //$('#imgHome').hide();
+
+                //$('.slider').removeAttr('src');
+
+                if (btn.attr('id') == "btnRead") {
+                    $('.slider:eq(0)').attr('src', '../AppTourImages/carousal_1_1.png');
+                    $('.slider:eq(1)').attr('src', '../AppTourImages/carousal_1_2.png');
+                }
+                    //2
+                else if (btn.attr('id') == "btnmembers") {
+                    $('.slider:eq(0)').attr('src', '../AppTourImages/carousal_1_3.png');
+                    $('.slider:eq(1)').attr('src', '../AppTourImages/carousal_1_7.png');
+                }
+                    //3
+                else if (btn.attr('id') == "btnProjects") {
+                    $('.slider:eq(0)').attr('src', '../AppTourImages/carousal_1_4.png');
+                    $('.slider:eq(1)').attr('src', '../AppTourImages/carousal_1_8.png');
+                }
+                    //4
+                else if (btn.attr('id') == "btnPricing") {
+                    $('.slider:eq(0)').attr('src', '../AppTourImages/carousal_1_5.png');
+                    $('.slider:eq(1)').attr('src', '../AppTourImages/carousal_1_10.png');
+                }
+                    //5
+                else if (btn.attr('id') == "btnContact") {
+                    $('.slider:eq(0)').attr('src', '../AppTourImages/carousal_1_6.png');
+                    $('.slider:eq(1)').attr('src', '../AppTourImages/carousal_1_11.jpg');
+                }
+
+                //$('#sliderContainer').show();
+            });
+            $("#btnOk").click(function () {
+                $('#tour_overlay').hide();
+            });
+
+            $('#aHome').click(function () {
+                $('#imgHome').show();
+                $('#sliderContainer').hide();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var curPos = 0;
+        $('#nav1').addClass('activeNavItem');
+        $(function () {
+
+            var slider = $('.slider');
+            var cntImages = slider.length;
+            var sliderWidth = slider.width();
+            $('#SliderWrapper').css('width', sliderWidth * cntImages);
+            setInterval(SlideImage, 2000);
+
+            function SlideImage() {
+
+                if ((curPos == cntImages - 1) || (newClicked == 1)) {
+                    curPos = 0;
+                    newClicked = 0;
+                }
+                else
+                    curPos++;
+                $('#SliderWrapper').animate({
+                    'marginLeft': sliderWidth * (-curPos)
+                });
+                $('.navListItem').removeClass('activeNavItem');
+                $('#nav' + (curPos + 1)).addClass('activeNavItem');
+            }
+
+            $('.navListItem').click(function () {
+                var showpic = 0;
+                var item = $(this);
+                var itemId = item.attr('id');
+                if (itemId == 'nav1')
+                    showpic = 0;
+                else if (itemId == 'nav2')
+                    showpic = 1;
+                else if (itemId == 'nav3')
+                    showpic = 2;
+                else if (itemId == 'nav4')
+                    showpic = 3;
+                else if (itemId == 'nav5')
+                    showpic = 4;
+                curPos = showpic - 1;
+            });
+
+            $('a').click(function () {
+                $('#sliderContainer').hide();
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div data-collapse="none" data-animation="over-right" data-duration="400" data-doc-height="1" id="nav-bar-top" class="navigation-bar dark w-nav" style="background-color:transparent;">
+        <div class="navigation-bar-container w-container">
+            <a class="brand-link left-spacing w-nav-brand w--current" href="../Pages/Home.aspx">
+                <img src="../Images/lgo.jpg" class="brand-image" alt="Brand-Pic Coming soon" />
+            </a>
+        </div>
+        <div style="float: right;">
+            <nav class="navigation-menu w-nav-menu" role="navigation">
+                <a href="../Pages/Home.aspx" class="navigation-link w-nav-link" style="max-height: 728px; text-decoration: none; padding: 10px;">Home</a>
+                <a href="../Pages/HireMe.aspx" class="navigation-link w-nav-link" style="max-height: 728px; text-decoration: none; padding: 10px;">Hire Me</a>
+            </nav>
+        </div>
+        <div class="w-nav-overlay"></div>
+    </div>
+
+    <div id="div-description" class="container-fluid div-desc slide-page">
+
+        <h1 class="app-heading">Application Walkthrough</h1>
+        <h2 class="app-heading-section">background</h2>
+        <div class="about-hero-description abalone-para">
+            This image-carousel based module could replace "Help-PPTs" & manual walkthrough which are generally used to make users aware of various
+            functionalities in the application. It can be re-used, one just need to replace the sample images with one's app images in correct order of steps which user is supposed to take.
+            Moreover, as many images as one want can be added for a particular functionality.
+            <br /><br />
+            Button-list on the bottom-right side represents various functionalities of application . On click of any functionality button,
+            a step by step guide for selected functionality will be shown in the form of image-carousel.
+        </div>
+        <h2 style="text-align:left;letter-spacing:3px;text-transform:uppercase;font-size:14px;color:darkorange;">Images</h2>
+        <div class="row">
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/app1.jpg" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/app2.jpg" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/app3.jpg" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+            <div class="scrnshot-img-container">
+                <img src="../AppTourImages/app4.jpg" class="scrnshot-img" alt="appwalkthrough-img" />
+            </div>
+        </div>
+    </div>
+
+    <div id="divbg" style="border-radius:5px;" class="slide-page">
+        <span class="section-separator" style="margin-top:1%;"></span>
+        <h2 class="app-heading-section" style="text-align: center; font-weight: bold;">DEMO</h2>
+        <span class="section-separator" style="margin-top:1%;"></span>
+        <div id="divSample" class="gradmc">
+            <label title="Revenue Forecasting-ABCD Demo" style="text-align:center;display:block;font-size:15px;color:darkslateGray;line-height:2;font-weight:bold;letter-spacing:3px;letter-spacing:2px;">MyApplication - Walkthrough</label>
+        </div>
+
+        <div id="header1">
+            <table>
+                <tr>
+                    <td style="width:80%;">
+
+                        <div id="tabs" style="">
+                            <ul>
+                                <li style=""><a href="#tabs-1" id="aHome">HOME</a></li>
+                                <li style=""><a href="#tabs-2">ABOUT</a></li>
+                                <li style=""><a href="#tabs-3">TEAM</a></li>
+                                <li style=""><a href="#tabs-4">WORK</a></li>
+                                <li style=""><a href="#tabs-5">PRICING</a></li>
+                                <li style=""><a href="#tabs-6">CONTACT</a></li>
+                            </ul>
+
+                            <div id="tabs-1">
+                                <input id="imgHome" type="image" src="../AppTourImages/carousal_1_home.jpg" class="img-size" alt="div5" />
+                                <div id="sliderContainer" style="display:none;">
+                                    <div id="SliderWrapper">
+                                        <img src="../AppTourImages/carousal_1_1.png" class="slider img-size" alt="carouselImg" />
+                                        <img src="../AppTourImages/carousal_1_2.png" class="slider img-size" alt="carouselImg" />
+                                    </div>
+                                    <div id="divNavigationDots">
+                                        <ol id="olNavigationDots">
+                                            <li class="navListItem" id="nav1"></li>
+                                            <li style="margin-left:20px;" class="navListItem" id="nav2"></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabs-2">
+                                <input type="image" src="../AppTourImages/carousal_1_about.jpg" class="img-size" alt="div5" />
+                            </div>
+                            <div id="tabs-3">
+                                <input type="image" src="../AppTourImages/carousal_1_team.jpg" class="img-size" alt="div5" />
+                            </div>
+                            <div id="tabs-4">
+                                <input type="image" src="../AppTourImages/carousal_1_work.jpg" class="img-size" alt="div5" />
+                            </div>
+                            <div id="tabs-5">
+                                <input type="image" src="../AppTourImages/carousal_1_pricing.jpg" class="img-size" alt="div5" />
+                            </div>
+                            <div id="tabs-6">
+                                <input type="image" src="../AppTourImages/carousal_1_contact.jpg" class="img-size" alt="div5" />
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:20%;">
+                        <div id="divrole" class="clsdivrole">
+                            <div class="divInternal" style="">
+                                <h2 style='text-align: center; color: white; text-transform: uppercase; letter-spacing: 2px; font-size: 18px;'>As a : <i style="font-size:12px;">[Role]</i></h2>
+                                <input id="btnMCO" type="submit" value="DESIGNER" class="btnEnable" />
+                                <input id="btnRH" type="submit" value="TRAINER" class="btnDisable" />
+                                <input id="btnUH" type="submit" value="DEVELOPER" class="btnDisable" /><br />
+                                <h1 style='margin-top:20px;text-align: center; color: white; text-transform: uppercase; letter-spacing: 2px; font-size: 18px;'> Where could I..</h1>
+                            </div>
+                            <div style="">
+                                <button class="btnDisable1" style="" id="btnRead" type="submit">Read About Organization</button><br />
+                                <button class="btnDisable1" style="" id="btnPricing" type="submit">View Pricing Deatails</button><br />
+                                <button class="btnDisable1" style="" id="btnProjects" type="submit">See Projects</button><br />
+                                <button class="btnDisable1" style="" id="btnContact" type="submit">Find Contact Details</button><br />
+                                <button class="btnDisable1" style="" id="btnmembers" type="submit">See Key Members</button><br />
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="footer-social-links up-to-down-animation">
+            <a href="https://www.linkedin.com/in/chauhanshivendra/" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/lin.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://www.twitter.com/I_m_Shiven" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/twi.svg" alt="twitter" />
+            </a>
+            <a href="https://www.instagram.com/shiven_chauhan/" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/instagram-logo.svg" alt="Instagram" />
+            </a>
+            <a href="https://www.medium.com/@ShivendraChauhan" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/medium.svg" alt="Medium" />
+            </a>
+            <a href="https://www.github.com/ImShiven" class="w-inline-block" target="_blank">
+                <img class="social-icon" src="../Images/git.svg" alt="GitHub" />
+            </a>
+        </div>
+        <div class="footer-copyright up-to-down-animation">Copyright © 2018 Shivendra Chauhan</div>
+    </div>
+</body>
+</html>
